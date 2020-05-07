@@ -1,0 +1,53 @@
+.main{
+
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    background-color: cadetblue;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 2;
+}
+.selectRegion{
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+
+
+}
+.searchCountrie{
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    
+}
+.countries{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: aquamarine;
+    position: relative;
+}
+.countrie{
+    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.countrieName{
+    text-align: center;
+    font-family: sans-serif;
+}
+.flag{
+    /* height: 200px; */
+}
