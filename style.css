@@ -1,13 +1,18 @@
+body{
+    background-color: #c7ecee;
+}
 .main{
-
+background-color: #c7ecee;
+left: 0;
 }
 .header{
     display: flex;
     justify-content: space-around;
-    background-color: cadetblue;
+    background-color: #95afc0;
     position: fixed;
-    top: 0px;
-    left: 0px;
+    top: 0;
+    /* left: 0; */
+    /* right: 0; */
     z-index: 2;
 }
 .selectRegion{
@@ -34,20 +39,48 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: aquamarine;
-    position: relative;
+    /* align-items: flex-end; */
+    background-color: #c7ecee;
+    position: absolute;
+    top: 70px;
+    /* left: 0; */
+}
+.countrieMargin{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: flex-start;
 }
 .countrie{
-    background-color: bisque;
+    background-color: #95afc0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    /* color: white; */
+    margin-bottom: 50px;
+    padding-bottom: 10px;
+    font-size: 25px;
+    font-family: sans-serif;
+}
+.countrie:hover{
+    background-color: lightslategrey;
+    color: white;
+    font-weight: bolder;
 }
 .countrieName{
     text-align: center;
     font-family: sans-serif;
 }
 .flag{
-    /* height: 200px; */
+    /* height: 50px;
+    width: 100px; */
+}
+.countrieDetails{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+.borders{
+    list-style-type: none;
 }
