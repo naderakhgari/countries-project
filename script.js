@@ -94,6 +94,6 @@ function showContrieDetails(countrie){
         let borders = document.querySelector(".borders");
         countrie.borders.forEach(neighbor => {
         borders.innerHTML += `
-        <li onclick="showBorderCountrie(${neighbor})" id="${neighbor}">${neighbor}</li>`
+        <li onclick="showBorderCountrie(${neighbor})" id="${neighbor}"><a href="#">${neighbor}</a></li>`
     })
 }
