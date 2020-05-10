@@ -1,23 +1,20 @@
 const countrieContainer = document.querySelector(".countries");
 const selectRegion = document.querySelector(".selectRegion");
 const searchCountrie = document.querySelector(".searchCountrie");
+let homeIcon = document.querySelector(".homeIcon");
+homeIcon.style.display = "none";
 let allCountries;
-fetch("https://restcountries.eu/rest/v2/all")
-.then(Response => {
-    return Response.json();
-})
-.then(countries => {
-    console.log(countries);
-    allCountries = countries;
-   showCountries(countries);
-   showCountriesByRegion(countries);
-   showSearchedCountrie(countries);
-//    addRegion(countries)
-})
-// function addRegion(countrieList){
-//     selectRegion.innerHTML = 
 
-// }
+fetch("https://restcountries.eu/rest/v2/all")
+.then(Response => Response.json())
+.then(countries => {
+    allCountries = countries;
+    showCountries(allCountries);
+    showCountriesByRegion(allCountries);
+})
+function backToIndex(){
+    showCountries(allCountries);
+}
 
 function showSearchedCountrie(countrieList){
     searchCountrie.addEventListener('input', ()=> {
@@ -31,6 +28,7 @@ function showSearchedCountrie(countrieList){
         showCountries(searchedCountrie)
     })
 }
+
 function showCountriesByRegion(countrieList){
     var selectedCountriesByRegion = []
     selectRegion.addEventListener('change', ()=>{
@@ -52,35 +50,32 @@ function showCountriesByRegion(countrieList){
 function showCountries(countrieList){
     countrieContainer.innerHTML = "";
     countrieList.forEach(countrie => {
-        
         countrieContainer.innerHTML += `
         <div class="countrieMargin lg-col-2">
-            <div class="countrie lg-col-11" onclick="showContrie(${countrie.callingCodes})" id="${countrie.numericCode}">
-                <h4 class="countrieName lg-col-12">${countrie.name}</h4>
-                <img src="${countrie.flag}" class=" flag lg-col-8">
+            <div class="countrie lg-col-11" onclick="showContrie(${countrie.callingCodes})" id="${countrie.numericCode }">
+            <h4 class="countrieName lg-col-12">${countrie.name}</h4>
+            <img src="${countrie.flag}" class=" flag lg-col-8">
             </div>
-        </div>
-        `
+        </div>`
     })
+    showSearchedCountrie(countrieList);
 }
+
 var selectedCountrie ={};
-function showContrie(countrieId){
-    selectedCountrie = allCountries.filter(countrie => countrie.callingCodes == countrieId);
+
+function showBorderCountrie(border){
+    selectedCountrie = allCountries.find(countrie => countrie.alpha3Code == border.id);
     showContrieDetails(selectedCountrie);
-    console.log(selectedCountrie);
-   
-
 }
-// function showContrieses(alpha3Code){
-//     console.log(alpha3Code)
-//     // selectedCountrie = allCountries.filter(countrie => countrie.alpha3Code === alpha3Code);
-//     // showContrieDetails(selectedCountrie);
 
-// }
+function showContrie(countrieId){
+    selectedCountrie = allCountries.find(countrie => countrie.callingCodes == countrieId);
+    showContrieDetails(selectedCountrie);
+}
 
-function showContrieDetails(countries){
-    countries.forEach(countrie =>{
-    countrieContainer.innerHTML = `
+function showContrieDetails(countrie){
+        homeIcon.style.display = "block";
+        countrieContainer.innerHTML = `
         <div class="countrie lg-col-11">
             <h1 class="countrieName lg-col-12">${countrie.name}<h3>${countrie.capital}</h3></h1>
             <div class="countrieDetails">
@@ -96,15 +91,9 @@ function showContrieDetails(countries){
                 </div>
             </div>
         </div> `
-        // selectedCountrie.style.backgroundImage = `url(${countrie.flag})`
         let borders = document.querySelector(".borders");
-    countrie.borders.forEach(neighbor => {
+        countrie.borders.forEach(neighbor => {
         borders.innerHTML += `
-        <li onclick="showContrie(${neighbor})"><a>${neighbor}</a></li>`
+        <li onclick="showBorderCountrie(${neighbor})" id="${neighbor}">${neighbor}</li>`
     })
-    
-})
-
-    
-    
 }
