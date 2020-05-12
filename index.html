@@ -7,15 +7,19 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="grid.css">
     <!-- <link rel="import" href="details.htlm"> -->
+    <!-- <script src="https://use.fontawesome.com/1e05dfd930.js"></script> -->
+    <!-- <meta name=“viewport” content="width=device-width, initial-scale=1"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css”> -->
 </head>
 <body>
     <div class="container main">
         <header class="header row">
-            <a href="#" class="lg-col-2">
-            <img src="home.png" class="homeIcon lg-col-2" onclick="backToIndex()">
-            </a>
-            <input type="text" class="searchCountrie" placeholder="Search countrie...">
-            <select class="selectRegion">
+             <!-- <i class="fas fa-moon"></i> -->
+            <!-- <span class="fa fa-moon iconFormat col-2"></span> -->
+            <!-- <i class="fad fa-sun"></i> -->
+            <input type="text" class="searchCountrie col-3" placeholder="Search countrie...">
+            <select class="selectRegion col-3">
                 <option>All Region</option>
                 <option>Africa</option>
                 <option>Americas</option>
@@ -24,10 +28,17 @@
                 <option>Oceania</option>
                 <option>Polar</option>
             </select>
+            <div class="mode lg-col-4 col-4">
+                <i class="fa fa-home homeIcon col-3 lg-col-2" onclick="backToIndex()"></i> 
+                <!-- <i class="fa fa-home"></i> -->
+                <i class="fa fa-sun-o sunFormat" onclick="sunFormat()">Light Mode</i> 
+                <span class="fa fa-moon-o moonFormat" onclick="moonFormat()">Dark Mode</span>
+            </div>
         </header>
         <section class="countries row">
         </section>
     </div>
     <script src="script.js"></script>
+    
 </body>
 </html>

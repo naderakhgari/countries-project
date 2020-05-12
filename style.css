@@ -1,20 +1,17 @@
 body{
-    background-color: #c7ecee;
+    background-color: #dff9fb;
+    color: #130f40;
 }
-.main{
-background-color: #c7ecee;
-left: 0;
-}
+
 .header{
     display: flex;
     justify-content: space-around;
-    background-color: #95afc0;
+    background-color: #dff9fb;
     position: fixed;
     top: 0;
-    /* left: 0; */
-    /* right: 0; */
     z-index: 2;
 }
+
 .selectRegion{
     height: 30px;
     padding-top: 5px;
@@ -25,6 +22,7 @@ left: 0;
 
 
 }
+
 .searchCountrie{
     height: 30px;
     padding-top: 5px;
@@ -34,56 +32,125 @@ left: 0;
     border-radius: 5px;
     
 }
+
 .countries{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    /* align-items: flex-end; */
-    background-color: #c7ecee;
+    background-color: #dff9fb;
     position: absolute;
     top: 70px;
-    /* left: 0; */
 }
+
 .countrieMargin{
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: flex-start;
 }
+
 .countrie{
     background-color: #95afc0;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    /* color: white; */
     margin-bottom: 50px;
     padding-bottom: 10px;
-    font-size: 25px;
+    font-size: 20px;
     font-family: sans-serif;
+    border-radius: 2px;
 }
+
 .countrie:hover{
     background-color: lightslategrey;
-    color: white;
+    /* color: white; */
     font-weight: bolder;
 }
+
 .countrieName{
     text-align: center;
     font-family: sans-serif;
 }
-.flag{
-    /* height: 50px;
-    width: 100px; */
-}
+
 .countrieDetails{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
 }
+
 .borders{
-    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
+
+.neighbor{
+    background-color: lightgray;
+    border: 0.7px solid gray;
+    border-radius: 3px;
+    padding: 5px;
+}
+
 .homeIcon{
     height: 50px;
 }
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* .borderLink{
+    text-decoration: none;
+    background-color: lightgray;
+    border: 1px solid grey;
+    border-radius: 3px;
+} */
+
+.sunFormat{
+    color: #f6e58d;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.moonFormat{
+    color: #535c68;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;    
+}
+
+.mode{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.homeIcon{
+    color: #535c68;
+    height: 30px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px; 
+    text-decoration: none;
+
+}
+/* *{
+    border: 1px solid red;
+} */

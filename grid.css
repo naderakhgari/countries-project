@@ -49,6 +49,20 @@
     .episodeDiv{
       margin-top: 8%;
     }
+    .countrieDetails{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+    .detail{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
   }
   
   @media (min-width: 1200px) {
